@@ -1,4 +1,4 @@
-#include "symbol.hpp"
+#include "include/symbol.hpp"
 
 int symbol_table::lookup(std::string symbol)
 {

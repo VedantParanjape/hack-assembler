@@ -1,7 +1,7 @@
 #include <iostream>
-#include "util.hpp"
-#include "symbol.hpp"
-#include "translate.hpp"
+#include "include/util.hpp"
+#include "include/symbol.hpp"
+#include "include/translate.hpp"
 #include <cstring>
 
 int main(int argc, char** argv)

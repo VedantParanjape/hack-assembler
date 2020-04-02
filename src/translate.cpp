@@ -1,4 +1,4 @@
-#include "translate.hpp"
+#include "include/translate.hpp"
 
 std::map<std::string, std::string> comp_table{
     {"0", "0101010"},
