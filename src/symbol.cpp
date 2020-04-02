@@ -25,7 +25,7 @@ bool symbol_table::insert(std::string symbol, int location)
     }
 }
 
-std::vector<std::string> handle_symbols(std::vector<std::string> instructions, symbol_table sym)
+std::vector<std::string> handle_symbols(std::vector<std::string> instructions, symbol_table& sym)
 {
     int instruction_number = 0;
     int variable_count = 16;
@@ -56,8 +56,8 @@ std::vector<std::string> handle_symbols(std::vector<std::string> instructions, s
         {
             std::string label(i.begin()+1, i.end());
             int loc = sym.lookup(label);
-
-            if (loc > 0 and std::find_if(label.begin(), label.end(), [](unsigned char c)->bool { return !isdigit(c); }) != label.end())
+            
+            if (loc >= 0 and std::find_if(label.begin(), label.end(), [](unsigned char c)->bool { return !isdigit(c); }) != label.end())
             {
                 i = "@" + std::to_string(loc);
             }
@@ -73,10 +73,3 @@ std::vector<std::string> handle_symbols(std::vector<std::string> instructions, s
 
     return processed;
 }
-
-// int main()
-// {
-//     symbol_table st;
-//     std::cout << st.insert("vedant", 100);
-//     std::cout << st.lookup("vedant") << st.lookup("@30");
-// }

@@ -12,20 +12,20 @@ class symbol_table{
         std::map<std::string, int> symbols{
             {"R0", 0},
             {"R1", 1},
-            {"R1", 2},
-            {"R1", 3},
-            {"R1", 4},
-            {"R1", 5},
-            {"R1", 6},
-            {"R1", 7},
-            {"R1", 8},
-            {"R1", 9},
-            {"R1", 10},
-            {"R1", 11},
-            {"R1", 12},
-            {"R1", 13},
-            {"R1", 14},
-            {"R1", 15},
+            {"R2", 2},
+            {"R3", 3},
+            {"R4", 4},
+            {"R5", 5},
+            {"R6", 6},
+            {"R7", 7},
+            {"R8", 8},
+            {"R9", 9},
+            {"R10", 10},
+            {"R11", 11},
+            {"R12", 12},
+            {"R13", 13},
+            {"R14", 14},
+            {"R15", 15},
             {"SCREEN", 16384},
             {"KBD", 24576},
             {"SP", 0},
@@ -34,12 +34,12 @@ class symbol_table{
             {"THIS", 3},
             {"THAT", 4}
         };
-    
+
     public:
         int lookup(std::string);
         bool insert(std::string, int location);
 };
 
-std::vector<std::string> handle_symbols(std::vector<std::string> instructions, symbol_table sym);
+std::vector<std::string> handle_symbols(std::vector<std::string> instructions, symbol_table &sym);
 
 #endif

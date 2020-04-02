@@ -45,8 +45,6 @@ int main(int argc, char** argv)
                 std::cout << "fatal error: couldnot create file\n";
             }
         }
-        
-        
     }
     
     return 0;
