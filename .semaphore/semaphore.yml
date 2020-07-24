@@ -1,13 +1,24 @@
 version: v1.0
-name: Initial Pipeline
+name: simppru_build
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
+  containers:
+    - name: main
+      image: 'debian:buster'
 blocks:
-  - name: 'Block #1'
+  - name: Hello
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Hello
           commands:
             - checkout
+            - echo "hello world"
+  - name: test
+    task:
+      jobs: []
+    jobs:
+      - name: test
+        commands:
+          - checkout - echo "test world"
