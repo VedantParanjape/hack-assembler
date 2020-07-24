@@ -11,14 +11,13 @@ blocks:
   - name: Hello
     task:
       jobs:
-        - name: Hello2
+        - name: Hello
           commands:
             - checkout
             - echo "hello world"
   - name: test
     task:
-      jobs: []
-    jobs:
-      - name: test2
-        commands:
-          - checkout - echo "test world"
+      jobs:
+        - name: test
+          commands:
+            - checkout - echo "test world"
